@@ -1,18 +1,17 @@
 pkgname=rlwrap
-pkgver=0.43.0
+pkgver=0.43
 pkgrel=1
-_snapshot='-snapshot.july19.2016'
 pkgdesc="A readline wrapper for programs with history"
 arch=('x86_64')
 url="http://utopia.knoware.nl/~hlub/uck/rlwrap/"
 license=('unknown')
 depends=('gawk' 'perl')
 makedepends=('gcc')
-source=("https://github.com/hanslub42/${pkgname}/archive/${pkgver}${_snapshot}.tar.gz")
-md5sums=('9e77cceb861648fb1425a387b0ba9a3c')
+source=("https://github.com/hanslub42/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+md5sums=('b993e83d3a292464de70719b32f83a34')
 
 prepare() {
-	cd ${pkgname}-${pkgver}${_snapshot}
+	cd ${pkgname}-${pkgver}
 	if [[ ! -e configure ]]; then
 		aclocal
 		autoconf
@@ -23,12 +22,12 @@ prepare() {
 }
 
 build() {
-	cd ${pkgname}-${pkgver}${_snapshot}
+	cd ${pkgname}-${pkgver}
 	./configure --prefix=/usr
 	make
 }
 
 package() {
-	cd ${pkgname}-${pkgver}${_snapshot}
+	cd ${pkgname}-${pkgver}
 	make install DESTDIR="${pkgdir}"
 }
