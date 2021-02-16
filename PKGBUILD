@@ -1,5 +1,5 @@
 pkgname=rlwrap
-pkgver=0.44
+pkgver=0.45
 pkgrel=1
 pkgdesc="A readline wrapper for programs with history"
 arch=('x86_64')
@@ -7,8 +7,8 @@ url="http://utopia.knoware.nl/~hlub/uck/rlwrap/"
 license=('unknown')
 depends=('gawk' 'perl')
 makedepends=('gcc')
-source=("https://github.com/hanslub42/${pkgname}/releases/download/7c1e432/${pkgname}-${pkgver}.tar.gz")
-md5sums=('21013e5db76f0b052ab2bdb69159d3ad')
+source=("https://github.com/hanslub42/${pkgname}/archive/v${pkgver}.tar.gz")
+md5sums=('0697c15d368602ed3467ac40f43f3e1c')
 
 prepare() {
 	cd ${pkgname}-${pkgver}
