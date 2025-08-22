@@ -1,5 +1,5 @@
 pkgname=rlwrap
-pkgver=0.47
+pkgver=0.47.1
 pkgrel=1
 pkgdesc="A readline wrapper for programs with history"
 arch=('x86_64')
@@ -8,7 +8,7 @@ license=('unknown')
 depends=('gawk' 'perl')
 makedepends=('gcc')
 source=("https://github.com/hanslub42/${pkgname}/archive/refs/tags/v${pkgver}.tar.gz")
-md5sums=('98634af12663f89ce9665bffda5d5a4d')
+md5sums=('edf41a6d9457432c6e4d62bb418e7c14')
 
 prepare() {
 	cd ${pkgname}-${pkgver}
